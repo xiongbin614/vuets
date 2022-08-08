@@ -62,7 +62,7 @@ export default defineComponent({
       onSubmit () {
         console.log(state.username)
         console.log(state.password)
-        router.push({name: 'home'})
+        router.push({name: 'about'})
       }
     }
     // const doubleCount = computed(() => state.topinset + "1");

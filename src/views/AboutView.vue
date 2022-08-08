@@ -9,7 +9,30 @@
     </van-swipe>
     <van-tabs v-model:active="active" animated>
       <van-tab v-for="index in 4" :title="'类别 ' + index" :key="index">
-        内容 {{ index }}
+        <van-pull-refresh v-model="loading" @refresh="onRefresh">
+          <van-card
+            num="2"
+            price="2.00"
+            desc="描述信息"
+            title="商品标题"
+            thumb="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
+          />
+          <van-card
+            num="2"
+            price="2.00"
+            desc="描述信息"
+            title="商品标题"
+            thumb="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
+          />
+          <van-card
+            num="2"
+            price="2.00"
+            desc="描述信息"
+            title="商品标题"
+            thumb="https://fastly.jsdelivr.net/npm/@vant/assets/ipad.jpeg"
+          />
+        </van-pull-refresh>
+        
       </van-tab>
     </van-tabs>
   </div>
@@ -24,7 +47,15 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
     HelloWorld,
   },
 })
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue {
+  loading = false
+  onRefresh() {
+    this.loading = true
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000);
+  }
+}
 </script>
 <style>
   .my-swipe .van-swipe-item {

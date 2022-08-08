@@ -1,5 +1,5 @@
 import { App } from "vue";
-import { Button, Form, Field, CellGroup, Search, Swipe, SwipeItem, Tabbar, TabbarItem,
+import { Button, Form, Field, CellGroup, Search, Swipe, SwipeItem, Tabbar, TabbarItem, Card, PullRefresh,
   Tab, Tabs } from "vant";
 const Vant = {
   install: (app: App): void => {
@@ -14,6 +14,8 @@ const Vant = {
     app.use(Tabs);
     app.use(Tabbar);
     app.use(TabbarItem);
+    app.use(Card);
+    app.use(PullRefresh);
   },
 };
 export default Vant;
