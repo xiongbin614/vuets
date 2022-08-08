@@ -1,7 +1,12 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <router-view/>
+    <van-tabbar v-model="active" route  @change="change">
+      <van-tabbar-item icon="home-o"  to="/home/about">笔记</van-tabbar-item>
+      <van-tabbar-item icon="search">标签</van-tabbar-item>
+      <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
+      <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+    </van-tabbar>
   </div>
 </template>
 
@@ -14,5 +19,19 @@ import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
     HelloWorld,
   },
 })
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue {
+  active = 0
+  change() {
+    console.log(this.active)
+  }
+}
 </script>
+<style>
+  .my-swipe .van-swipe-item {
+    color: #fff;
+    font-size: 20px;
+    line-height: 150px;
+    text-align: center;
+    background-color: #39a9ed;
+  }
+</style>

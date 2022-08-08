@@ -8,7 +8,7 @@
       <van-swipe-item>4</van-swipe-item>
     </van-swipe>
     <van-tabs v-model:active="active" animated>
-      <van-tab v-for="index in 4" :title="'类别 ' + index" :key="index">
+      <van-tab v-for="index in 4" :title="'选项 ' + index" :key="index">
         内容 {{ index }}
       </van-tab>
     </van-tabs>
