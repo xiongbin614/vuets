@@ -28,9 +28,11 @@
 </template>
 
 <script lang="ts">
-// interface STATE {
-//   topinset: number;
-// }
+interface STATE {
+  topinset: number;
+  username: string;
+  password: string;
+}
 import {
   defineComponent,
   reactive,
@@ -53,8 +55,8 @@ export default defineComponent({
     // context.emit("openAgain");
     // prop
     // prop.list
-    const state = reactive({
-      // topinset: 0,
+    const state = reactive<STATE>({
+      topinset: 0,
       username: '',
       password: '',
     });

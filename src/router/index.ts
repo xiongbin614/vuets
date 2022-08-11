@@ -1,20 +1,20 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home/about'
+    redirect: '/home/index'
   },
   {
     path: '/home',
     name: 'home',
-    component: HomeView,
+    component: Home,
     children: [
       {
-        path: 'about',
-        name: 'about',
-        component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+        path: 'index',
+        name: 'index',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Index.vue')
       }
     ]
   },
